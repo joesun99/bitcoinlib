@@ -8,5 +8,6 @@ namespace BitcoinLib.Services.Coins.Bitcoin
 {
     public interface IBitcoinService : ICoinService, IBitcoinConstants
     {
+   
     }
 }

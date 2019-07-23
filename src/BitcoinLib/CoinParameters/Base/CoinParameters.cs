@@ -15,6 +15,7 @@ using BitcoinLib.Services.Coins.Dash;
 using BitcoinLib.Services.Coins.Dogecoin;
 using BitcoinLib.Services.Coins.Litecoin;
 using BitcoinLib.Services.Coins.Mogwaicoin;
+using BitcoinLib.Services.Coins.Ravencoin;
 using BitcoinLib.Services.Coins.Sarcoin;
 using BitcoinLib.Services.Coins.Smartcash;
 
@@ -463,6 +464,17 @@ namespace BitcoinLib.Services
 
                 #endregion
 
+                #region Ravencoin
+
+                #endregion
+                else if (coinService is RavencoinService)
+                {
+                    CoinShortName = "RVN";
+                    CoinLongName = "Ravencoin";
+                    IsoCurrencyCode = "RVN";
+
+                    //  Note: The rest of the parameters will have to be defined at run-time
+                }
                 #region Uknown coin exception
 
                 else

@@ -12,6 +12,7 @@ using BitcoinLib.RPC.RequestResponse;
 using BitcoinLib.RPC.Specifications;
 using BitcoinLib.Services.Coins.Base;
 using Newtonsoft.Json;
+//using System.Web.Script.Serialization;
 
 namespace BitcoinLib.RPC.Connector
 {
@@ -66,7 +67,6 @@ namespace BitcoinLib.RPC.Connector
                         }
                     }
                 }
-
                 var rpcResponse = JsonConvert.DeserializeObject<JsonRpcResponse<T>>(json);
                 return rpcResponse.Result;
             }
@@ -103,7 +103,7 @@ namespace BitcoinLib.RPC.Connector
                                             RpcErrorCode = jsonRpcResponseObject.Error.Code
                                         };
 
-                                        throw internalServerErrorException;
+                                        throw internalServerErrorException; 
                                     }
                                     catch (JsonException)
                                     {

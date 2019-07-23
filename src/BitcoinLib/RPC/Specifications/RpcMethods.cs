@@ -124,11 +124,23 @@ namespace BitcoinLib.RPC.Specifications
         walletlock,
         walletpassphrase,
         walletpassphrasechange,
-				//2018-01-20: added Dash privatesend mixing support
-				privatesend,
-				//2018-03-02: added getaddressbalance (needs addressindex = 1 in dash.conf)
-				getaddressbalance,
-				//2018-07-23: Masternode support, usually list command is used
-				masternode
+	    //2018-01-20: added Dash privatesend mixing support
+	    privatesend,
+	    //2018-03-02: added getaddressbalance (needs addressindex = 1 in dash.conf)
+	    getaddressbalance,
+	    //2018-07-23: Masternode support, usually list command is used
+	    masternode,
+
+        //ravencoin asset methods
+        getassetdata, //"asset_name"
+        getcacheinfo,
+        issue, //"asset_name" qty "( to_address )" "( change_address )" ( units ) ( reissuable ) ( has_ipfs ) "( ipfs_hash )"
+        issueunique,// "root_name" [asset_tags] ( [ipfs_hashes] ) "( to_address )" "( change_address )"
+        listaddressesbyasset, // "asset_name"
+        listassetbalancesbyaddress, // "address"
+        listassets, // "( asset )" ( verbose ) ( count ) ( start )
+        listmyassets, // "( asset )" ( verbose ) ( count ) ( start )
+        reissue, // "asset_name" qty "to_address" "change_address" ( reissuable ) ( new_unit) "( new_ipfs )" 
+        transfer // "asset_name" qty "to_address"
     }
 }
